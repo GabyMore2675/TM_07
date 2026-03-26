@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Moneda</string>
+    <color name="nuevoColor">#C5e2f0</color>
+    <string name="Dólares">A soles</string>
+    <string name="Soles">A dólares</string>
+    <string name="Convertir">Calcular</string>
+    <string name="miClicManejador">miClicManejador</string>
+</resources>
