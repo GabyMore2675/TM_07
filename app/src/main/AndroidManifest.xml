@@ -12,6 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Seguimiento">
         <activity
+            android:name=".CuartaActividad4"
+            android:exported="false" />
+        <activity
+            android:name=".TerceraActividad3"
+            android:exported="false" />
+        <activity
+            android:name=".SegundaActividad2"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
