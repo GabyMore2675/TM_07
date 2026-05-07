@@ -1,4 +1,4 @@
-<img width="678" height="937" alt="image" src="https://github.com/user-attachments/assets/20e39abb-a845-4916-a12e-6e10ad2b8362" />Ejercicio 01:
+Ejercicio 01:
 <img width="886" height="941" alt="image" src="https://github.com/user-attachments/assets/7bd1550b-9e45-4012-bdfe-37d24f1151c0" />
 <img width="953" height="1010" alt="Captura de pantalla 2026-05-06 222615" src="https://github.com/user-attachments/assets/34b7652e-e56e-4943-b5ee-a36d68315a17" />
 
