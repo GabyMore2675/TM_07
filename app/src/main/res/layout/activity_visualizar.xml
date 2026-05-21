@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFAFA"
+    android:fitsSystemWindows="true"
+    android:paddingTop="24dp">
+
+    <!-- Header -->
+    <TextView
+        android:id="@+id/tvTitleVis"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/title_visualizar"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#003087"
+        android:padding="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnLogoutVis"/>
+
+    <!-- Logout -->
+    <Button
+        android:id="@+id/btnLogoutVis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Salir"
+        android:textSize="12sp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginTop="12dp"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Divider -->
+    <View
+        android:id="@+id/divVis"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="#C5D8FF"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/tvTitleVis"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- 🔵 FILTROS -->
+    <Spinner
+        android:id="@+id/spnFiltroEscuela"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/spinner_bg"
+        app:layout_constraintTop_toBottomOf="@id/divVis"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Spinner
+        android:id="@+id/spnFiltroSemestre"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/spinner_bg"
+        app:layout_constraintTop_toBottomOf="@id/spnFiltroEscuela"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Spinner
+        android:id="@+id/spnFiltroAsignatura"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/spinner_bg"
+        app:layout_constraintTop_toBottomOf="@id/spnFiltroSemestre"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Recycler (BAJA DEBAJO DE FILTROS) -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerClases"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="12dp"
+        android:clipToPadding="false"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="70dp"
+        app:layout_constraintTop_toBottomOf="@id/spnFiltroAsignatura"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Empty -->
+    <TextView
+        android:id="@+id/tvEmpty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No hay clases registradas aún."
+        android:textColor="#9E9E9E"
+        android:textSize="15sp"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="@id/recyclerClases"
+        app:layout_constraintBottom_toBottomOf="@id/recyclerClases"
+        app:layout_constraintStart_toStartOf="@id/recyclerClases"
+        app:layout_constraintEnd_toEndOf="@id/recyclerClases"
+        app:layout_constraintVertical_bias="0.45"/>
+
+    <!-- Botón regresar -->
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Regresar"
+        android:textSize="12sp"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="12dp"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

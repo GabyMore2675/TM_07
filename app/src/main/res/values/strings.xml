@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">RepositorioFB</string>
+
+    <!-- Login -->
+    <string name="lbl_email">Correo electrónico</string>
+    <string name="lbl_password">Contraseña</string>
+    <string name="btn_login">Iniciar sesión</string>
+
+    <!-- Main (Admin) -->
+    <string name="lbl_escuela">Escuela Profesional:</string>
+    <string name="lbl_semestre">Semestre:</string>
+    <string name="lbl_seccion">Sección:</string>
+    <string name="lbl_asignatura">Asignatura:</string>
+    <string name="lbl_tema">Tema de la clase:</string>
+    <string name="hint_tema">Escribe el tema aquí…</string>
+    <string name="btn_registrar">Registrar Clase</string>
+    <string name="btn_visualizar">Ver Clases</string>
+    <string name="btn_logout">Cerrar sesión</string>
+
+    <!-- Visualizar -->
+    <string name="title_visualizar">Clases Registradas</string>
+    <string name="btn_editar">Editar</string>
+    <string name="btn_eliminar">Eliminar</string>
+</resources>

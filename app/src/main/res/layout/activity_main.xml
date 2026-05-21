@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFAFA"
+    android:fillViewport="true">
+
+    <!-- Contenedor base para permitir centrado -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp">
+
+        <!-- Contenido principal centrado -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/main"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0.5">
+
+            <!-- Header -->
+            <TextView
+                android:id="@+id/tvWelcome"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="👨‍💼 Panel Administrador"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#003087"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <!-- Logout button -->
+            <Button
+                android:id="@+id/btnLogout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_logout"
+                android:textSize="12sp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <!-- Divider -->
+            <View
+                android:id="@+id/divider"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="#C5D8FF"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@id/tvWelcome"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <!-- Escuela -->
+            <TextView
+                android:id="@+id/lblEscuela"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/lbl_escuela"
+                android:textStyle="bold"
+                android:textColor="#1A237E"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@id/divider"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <Spinner
+                android:id="@+id/spnEscuela"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:background="@drawable/spinner_bg"
+                android:layout_marginTop="4dp"
+                app:layout_constraintTop_toBottomOf="@id/lblEscuela"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <!-- Semestre -->
+            <TextView
+                android:id="@+id/lblSemestre"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/lbl_semestre"
+                android:textStyle="bold"
+                android:textColor="#1A237E"
+                android:layout_marginTop="14dp"
+                app:layout_constraintTop_toBottomOf="@id/spnEscuela"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <Spinner
+                android:id="@+id/spnSemestre"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:background="@drawable/spinner_bg"
+                android:layout_marginTop="4dp"
+                app:layout_constraintTop_toBottomOf="@id/lblSemestre"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <!-- Sección -->
+            <TextView
+                android:id="@+id/lblSeccion"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/lbl_seccion"
+                android:textStyle="bold"
+                android:textColor="#1A237E"
+                android:layout_marginTop="14dp"
+                app:layout_constraintTop_toBottomOf="@id/spnSemestre"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <Spinner
+                android:id="@+id/spnSeccion"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:background="@drawable/spinner_bg"
+                android:layout_marginTop="4dp"
+                app:layout_constraintTop_toBottomOf="@id/lblSeccion"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <!-- Asignatura -->
+            <TextView
+                android:id="@+id/lblAsignatura"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/lbl_asignatura"
+                android:textStyle="bold"
+                android:textColor="#1A237E"
+                android:layout_marginTop="14dp"
+                app:layout_constraintTop_toBottomOf="@id/spnSeccion"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <Spinner
+                android:id="@+id/spnAsignatura"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:background="@drawable/spinner_bg"
+                android:layout_marginTop="4dp"
+                app:layout_constraintTop_toBottomOf="@id/lblAsignatura"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <!-- Tema -->
+            <TextView
+                android:id="@+id/lblTema"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/lbl_tema"
+                android:textStyle="bold"
+                android:textColor="#1A237E"
+                android:layout_marginTop="14dp"
+                app:layout_constraintTop_toBottomOf="@id/spnAsignatura"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilTema"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_tema"
+                android:layout_marginTop="4dp"
+                app:layout_constraintTop_toBottomOf="@id/lblTema"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtTema"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapSentences"
+                    android:imeOptions="actionDone"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Botones -->
+            <Button
+                android:id="@+id/btnRegistrar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_registrar"
+                android:backgroundTint="#003087"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="6dp"
+                app:layout_constraintTop_toBottomOf="@id/tilTema"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btnVisualizar"/>
+
+            <Button
+                android:id="@+id/btnVisualizar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_visualizar"
+                android:backgroundTint="#FF6D00"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="6dp"
+                app:layout_constraintTop_toBottomOf="@id/tilTema"
+                app:layout_constraintStart_toEndOf="@id/btnRegistrar"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
