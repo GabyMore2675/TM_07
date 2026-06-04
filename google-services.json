@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "688461476369",
+    "project_id": "autenticacion-d44fc",
+    "storage_bucket": "autenticacion-d44fc.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:688461476369:android:06431d7628fba8eb3477b0",
+        "android_client_info": {
+          "package_name": "com.example.autenticacion"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "688461476369-eeh7psvg31t4qurto9ne59vt17sfao0g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBobuk8l2H-nYZd4e_V6KAr0Pw9XmnGrQ4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "688461476369-eeh7psvg31t4qurto9ne59vt17sfao0g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:688461476369:android:661ee2ca3914d36a3477b0",
+        "android_client_info": {
+          "package_name": "com.example.bitacora"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "688461476369-eeh7psvg31t4qurto9ne59vt17sfao0g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBobuk8l2H-nYZd4e_V6KAr0Pw9XmnGrQ4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "688461476369-eeh7psvg31t4qurto9ne59vt17sfao0g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
