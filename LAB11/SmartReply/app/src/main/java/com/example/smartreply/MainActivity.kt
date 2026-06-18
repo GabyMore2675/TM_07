@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
     private var conversation = ArrayList<TextMessage>()
+    private var conversationHistory = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,55 +31,64 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.clearButton.setOnClickListener {
-            conversation.clear()
-
-            binding.hint0Button.visibility = View.GONE
-            binding.hint1Button.visibility = View.GONE
-            binding.hint2Button.visibility = View.GONE
-
-            binding.messageText.setText("")
-            binding.nameText.setText("")
-            binding.errorText.text = ""
+            clearConversation()
         }
 
         binding.hint0Button.setOnClickListener {
-            addLocalMessage(binding.hint0Button.text.toString())
+            addSuggestionAsStudentMessage(binding.hint0Button.text.toString())
         }
 
         binding.hint1Button.setOnClickListener {
-            addLocalMessage(binding.hint1Button.text.toString())
+            addSuggestionAsStudentMessage(binding.hint1Button.text.toString())
         }
 
         binding.hint2Button.setOnClickListener {
-            addLocalMessage(binding.hint2Button.text.toString())
+            addSuggestionAsStudentMessage(binding.hint2Button.text.toString())
         }
     }
 
     private fun addMessage(text: String) {
-        val name = binding.nameText.text.toString().trim()
+        val message = text.trim()
 
-        if (text.trim().isEmpty()) {
+        if (message.isEmpty()) {
             Toast.makeText(this, "Ingrese un mensaje", Toast.LENGTH_SHORT).show()
             return
         }
 
-        if (name.isEmpty()) {
-            Toast.makeText(this, "Ingrese un nombre", Toast.LENGTH_SHORT).show()
-            return
+        if (binding.studentRadioButton.isChecked) {
+            addStudentMessage(message)
+        } else if (binding.teacherRadioButton.isChecked) {
+            addTeacherMessage(message)
         }
 
+        binding.messageText.setText("")
+        hideHints()
+    }
+
+    private fun addStudentMessage(text: String) {
+        conversation.add(
+            TextMessage.createForLocalUser(
+                text,
+                System.currentTimeMillis()
+            )
+        )
+
+        addMessageToScreen("Estudiante", text)
+    }
+
+    private fun addTeacherMessage(text: String) {
         conversation.add(
             TextMessage.createForRemoteUser(
                 text,
                 System.currentTimeMillis(),
-                name
+                "Profesor"
             )
         )
 
-        hideHints()
+        addMessageToScreen("Profesor", text)
     }
 
-    private fun addLocalMessage(text: String) {
+    private fun addSuggestionAsStudentMessage(text: String) {
         if (text.trim().isEmpty()) return
 
         conversation.add(
@@ -87,6 +97,8 @@ class MainActivity : AppCompatActivity() {
                 System.currentTimeMillis()
             )
         )
+
+        addMessageToScreen("Estudiante", text)
 
         binding.messageText.setText("")
         hideHints()
@@ -103,6 +115,8 @@ class MainActivity : AppCompatActivity() {
         smartReply.suggestReplies(conversation)
             .addOnSuccessListener { result ->
 
+                hideHints()
+
                 if (result.status == SmartReplySuggestionResult.STATUS_NOT_SUPPORTED_LANGUAGE) {
                     Toast.makeText(
                         applicationContext,
@@ -112,6 +126,15 @@ class MainActivity : AppCompatActivity() {
                 } else if (result.status == SmartReplySuggestionResult.STATUS_SUCCESS) {
 
                     val suggestions = result.suggestions
+
+                    if (suggestions.isEmpty()) {
+                        Toast.makeText(
+                            this,
+                            "No se generaron sugerencias para este contexto.",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                        return@addOnSuccessListener
+                    }
 
                     if (suggestions.isNotEmpty()) {
                         binding.hint0Button.text = suggestions[0].text
@@ -132,6 +155,29 @@ class MainActivity : AppCompatActivity() {
             .addOnFailureListener { exception ->
                 binding.errorText.text = exception.toString()
             }
+    }
+
+    private fun addMessageToScreen(sender: String, text: String) {
+        if (conversationHistory.isEmpty()) {
+            conversationHistory = "$sender: $text"
+        } else {
+            conversationHistory += "\n$sender: $text"
+        }
+
+        binding.conversationText.text = conversationHistory
+    }
+
+    private fun clearConversation() {
+        conversation.clear()
+        conversationHistory = ""
+
+        binding.messageText.setText("")
+        binding.conversationText.text = "Aún no hay mensajes."
+        binding.errorText.text = ""
+
+        binding.studentRadioButton.isChecked = true
+
+        hideHints()
     }
 
     private fun hideHints() {
