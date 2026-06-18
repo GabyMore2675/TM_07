@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF7FF"
+    android:fitsSystemWindows="true"
+    android:fillViewport="true"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingStart="32dp"
+        android:paddingEnd="32dp"
+        android:paddingTop="90dp"
+        android:paddingBottom="32dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Smart Reply"
+            android:textAlignment="center"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#4F378B"
+            android:layout_marginBottom="24dp" />
+
+        <EditText
+            android:id="@+id/nameText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Name"
+            android:textSize="22sp"
+            android:singleLine="true"
+            android:padding="12dp" />
+
+        <EditText
+            android:id="@+id/messageText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Message"
+            android:textSize="22sp"
+            android:singleLine="true"
+            android:padding="12dp"
+            android:layout_marginTop="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="18dp">
+
+            <Button
+                android:id="@+id/sendButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Send"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/hintsButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.3"
+                android:text="Suggestions"
+                android:textSize="12sp"
+                android:layout_marginStart="6dp"
+                android:layout_marginEnd="6dp" />
+
+            <Button
+                android:id="@+id/clearButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Clean"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/hint0Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginTop="24dp" />
+
+        <Button
+            android:id="@+id/hint1Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/hint2Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/errorText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#B00020"
+            android:textSize="14sp"
+            android:textAlignment="center"
+            android:layout_marginTop="16dp" />
+
+    </LinearLayout>
+
+</ScrollView>

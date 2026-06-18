@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF7FF"
+    android:fitsSystemWindows="true"
+    android:fillViewport="true"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingStart="32dp"
+        android:paddingEnd="32dp"
+        android:paddingTop="90dp"
+        android:paddingBottom="32dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Escáner de Código de Barras"
+            android:textAlignment="center"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="#4F378B"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Aplicación Android en Kotlin usando ML Kit para escanear códigos QR y códigos de barras."
+            android:textAlignment="center"
+            android:textSize="16sp"
+            android:textColor="#333333"
+            android:layout_marginBottom="28dp" />
+
+        <Button
+            android:id="@+id/scanButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Escanear código"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/galleryButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Subir código desde galería"
+            android:textSize="16sp"
+            android:layout_marginTop="12dp" />
+
+        <TextView
+            android:id="@+id/resultTitleText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Resultado:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#4F378B"
+            android:layout_marginTop="32dp" />
+
+        <TextView
+            android:id="@+id/resultText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Todavía no se ha escaneado ningún código."
+            android:textSize="16sp"
+            android:textColor="#333333"
+            android:padding="16dp"
+            android:layout_marginTop="10dp"
+            android:background="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/typeText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="15sp"
+            android:textColor="#666666"
+            android:layout_marginTop="12dp" />
+
+    </LinearLayout>
+
+</ScrollView>
